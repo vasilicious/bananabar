@@ -114,8 +114,8 @@ function Banana_OnEvent()
 			end
 		end
 		Banana_Print("Banana Raid Symbols loaded. Type /bb, /bbr, /banana or /bananabar to open config panel.")
-		Banana_Print("Use Ctrl + RightClick to move buttons")
-		Banana_Print("Use Alt + LeftClick to clear all existing symbols")
+		Banana_Print("Use LeftClick to mark target")
+		Banana_Print("Use RightClick to move buttons")
 
 		if not BANANA_CONFIG.SHOW_EXTRA_INFO then
 			UIDropDownMenu_Initialize(BananaConfigFrameComboBoxLayout, Banana_ComboBoxLayout_Initialize)
