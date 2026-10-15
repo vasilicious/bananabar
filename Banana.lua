@@ -170,7 +170,7 @@ end
 
 function Banana_ButtonOnClick(mouseButton)
 	local index = this:GetID()
-	if (IsControlKeyDown()) and mouseButton == "LeftButton" then
+	if mouseButton == "LeftButton" then
 		if BANANA_CONFIG.HIDE_UNUSED_BUTTONS ~= 1 then
 			if not UnitExists("target") then
 				Banana_TargetRaidSymbol(index)
@@ -199,21 +199,12 @@ function Banana_ButtonOnClick(mouseButton)
 			TargetLastTarget()
 		end
 		return
-	end
-	if (not IsControlKeyDown()) and (not IsAltKeyDown()) and mouseButton == "LeftButton" then
-		Banana_TargetRaidSymbol(index)
-		return
-	end
-	if (IsControlKeyDown()) and mouseButton == "RightButton" then
+	elseif mouseButton == "RightButton" then
 		--moving
 		return
 	end
-	if (IsAltKeyDown()) and mouseButton == "LeftButton" then
-		Banana_ClearAllSymbols()
-		return
-	end
-	Banana_Print("Use Ctrl + RightClick to move buttons")
-	Banana_Print("Use Alt + LeftClick to clear all existing symbols")
+	Banana_Print("Use LeftClick to mark target")
+	Banana_Print("Use RightClick to move buttons")
 end
 
 local movingButton = nil
